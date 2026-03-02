@@ -1,220 +1,728 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Younan Gamal — Portfolio</title>
-    <meta name="description" content="Professional portfolio showcasing UI/UX design and development work">
-    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Younan Gamal - Flutter Developer &amp; Front-End Engineer. Crafting beautiful, high-performance mobile &amp; web applications." />
+    <meta name="keywords"
+        content="Flutter Developer, Front-End Developer, Dart, Mobile App, Egypt, Portfolio, Younan Gamal" />
+    <meta name="author" content="Younan Gamal" />
+    <title>Younan Gamal | Flutter Developer</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <!-- PINNED NAVBAR -->
+
+    <!-- ========== NAVBAR ========== -->
     <nav class="navbar" id="navbar">
-        <div class="nav-content">
-            <div class="brand">
-                <div class="logo"><img src="assets/images/profile.png" style="width: 100%;" alt=""></div>
-
-                <div class="brand-text">
-                    <h1>Younan Gamal</h1>
-                    <p>Flutter Developer</p>
-                </div>
-            </div>
-
-            <ul>
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>YG<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <button class="nav-cta" onclick="document.querySelector('#contact').scrollIntoView()">Let's Talk</button>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </nav>
-    <main>
-        <div class="container">
-            <!-- HERO -->
-            <section id="home" class="hero">
-                <div class="profile-image-wrapper">
-                    <div class="profile-image">
-                        <img src="assets/images/profile.png" alt="Younan Gamal">
-                    </div>
-                </div>
-                <div class="hero-content">
-                    <!-- <div class="hero-badge">
-                        <span>✨</span>
-                        <span>Available for Freelance Work</span>
-                    </div> -->
-                    <h2 class="example-title" id="typeWriter">Hi, I'm Younan Gamal</h2>
 
-                    <p class="name-title">Flutter Developer & Front-End </p>
-                    <p class="lead">I'm a passionate developer who crafts beautiful, functional digital experiences.
-                        With expertise in Flutter and modern web technologies, I transform ideas into elegant solutions
-                        that users love. I believe in clean code, intuitive design, and creating interfaces that make a
-                        difference.</p>
-                    <div class="hero-actions">
-                        <button class="btn-primary" onclick="document.querySelector('#contact').scrollIntoView()">Hire
-                            Me</button>
-                        <button class="btn-secondary"
-                            onclick="document.querySelector('#projects').scrollIntoView()">View Work</button>
-                    </div>
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+        <div class="hero-glow"></div>
+        <div class="hero-glow2"></div>
+
+        <div class="hero-container">
+            <!-- LEFT: Content -->
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Available for Work
                 </div>
-            </section>
-            <div class="stats">
-                <div class="stat">
-                    <strong class="count" data-target="38">0</strong>
-                    <span>Projects Completed</span>
+
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Younan Gamal</span>
+                </h1>
+
+                <div class="hero-subtitle-wrap">
+                    <span class="hero-subtitle-static">I build&nbsp;</span>
+                    <span class="hero-typed" id="typedText"></span>
+                    <span class="cursor-blink">|</span>
                 </div>
-                <div class="stat">
-                    <strong class="count" data-target="5">0</strong>
-                    <span>Happy Clients</span>
+
+                <p class="hero-description">
+                    Flutter Developer &amp; Front-End Engineer based in Egypt. Passionate about crafting beautiful,
+                    high-performance mobile &amp; web experiences with Flutter, Dart, and modern web technologies.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
                 </div>
-                <div class="stat">
-                    <strong class="count" data-target="1">0</strong>
-                    <span>Years Experience</span>
+
+                <div class="hero-socials">
+                    <!-- Phone -->
+                    <a href="tel:01208106259" class="social-link" aria-label="Phone">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path
+                                d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                        </svg>
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:younangamal5@gmail.com" class="social-link" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path
+                                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/younangamal/" class="social-link" aria-label="LinkedIn"
+                        target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path
+                                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                        </svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/YounanGamal" class="social-link" aria-label="GitHub" target="_blank"
+                        rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
-            <!-- SERVICES -->
-            <section id="services" class="reveal">
-                <div class="section-header">
-                    <h3>What I Do</h3>
-                    <p>Specialized services to bring your vision to life</p>
-                </div>
 
-                <div class="services-grid">
-                    <!-- <div class="service-card reveal">
-                        <div class="service-icon">🎨</div>
-                        <h4>UI/UX Design</h4>
-                        <p>Designing intuitive and accessible interfaces with a focus on user experience, wireframing,
-                            and prototyping that puts usability first.</p>
-                    </div> -->
-
-                    <div class="service-card reveal">
-                        <div class="service-icon">📱</div>
-                        <h4>Flutter Development</h4>
-                        <p>Building cross-platform mobile applications with Flutter, delivering native performance and
-                            beautiful, responsive interfaces.</p>
-                    </div>
-
-                    <div class="service-card reveal">
-                        <div class="service-icon">💻</div>
-                        <h4>Front-End Development</h4>
-                        <p>Creating fast, responsive websites using modern HTML, CSS, and JavaScript with clean,
-                            maintainable code architecture.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PROJECTS -->
-            <section id="projects" class="reveal">
-                <div class="section-header">
-                    <h3>Featured Work</h3>
-                    <p>Selected projects and case studies</p>
-                </div>
-
-
-                <div class="projects-grid">
-
-                    <!-- ROUTE ACADEMY APP -->
-                    <div class="project-card reveal">
-                        <div class="project-img">
-                            <img src="assets/images/route-app.jpg" alt="Route Academy App">
-                        </div>
-                        <div class="project-body">
-                            <h5>Route Academy App</h5>
-                            <p>A full course booking platform including student registration, online/offline attendance,
-                                payment integration (Visa, Vodafone Cash, Fawry), instructor profiles, and user reviews.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Flutter</span>
-                                <span class="tag">Payments</span>
-                                <span class="tag">UI/UX</span>
+            <!-- RIGHT: Phone Mockup -->
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="app-ui">
+                                <div class="app-header">
+                                    <div class="app-avatar"></div>
+                                    <div class="app-title-lines">
+                                        <div class="line-block w-60"></div>
+                                        <div class="line-block w-40 small"></div>
+                                    </div>
+                                </div>
+                                <div class="accent-card">
+                                    <div class="card-icon">
+                                        <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                            <rect x="5" y="2" width="14" height="20" rx="2" stroke="white"
+                                                stroke-width="1.5" fill="none" />
+                                            <circle cx="12" cy="17" r="1.5" fill="white" />
+                                        </svg>
+                                    </div>
+                                    <div class="card-lines">
+                                        <div class="line-block w-80"></div>
+                                        <div class="line-block w-50 small"></div>
+                                    </div>
+                                </div>
+                                <div class="app-grid">
+                                    <div class="grid-item"></div>
+                                    <div class="grid-item"></div>
+                                    <div class="grid-item"></div>
+                                    <div class="grid-item"></div>
+                                </div>
+                                <div class="app-bar">
+                                    <div class="bar-dot active"></div>
+                                    <div class="bar-dot"></div>
+                                    <div class="bar-dot"></div>
+                                    <div class="bar-dot"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- SMART ATTENDANCE SYSTEM -->
-                    <div class="project-card reveal">
-                        <div class="project-img">
-                            <img src="assets/images/smart-attendance.jpg" alt="Smart Attendance System">
-                        </div>
-                        <div class="project-body">
-                            <h5>Smart Attendance System</h5>
-                            <p>An intelligent attendance system using QR codes & geolocation to verify attendance.
-                                Features include real-time logs, admin dashboard, secure validation, and automated
-                                reporting.</p>
-                            <div class="project-tags">
-                                <span class="tag">Flutter</span>
-                                <span class="tag">QR Code</span>
-                                <span class="tag">Geolocation</span>
-                            </div>
-                        </div>
+                    <!-- Float badges -->
+                    <div class="flutter-badge float-badge">
+                        <svg viewBox="0 0 48 48" width="14" height="14">
+                            <path d="M13 29l11-11 11 11-5.5 5.5L24 29l-5.5 5.5z" fill="#40C4FF" />
+                            <path d="M24 6L6 24l6 6L24 18l18-6z" fill="#40C4FF" />
+                            <path d="M29.5 34.5L24 40l-5.5-5.5L24 29z" fill="#0091EA" />
+                        </svg>
+                        Flutter
                     </div>
-
-                    <!-- CLOTHING FACTORY MANAGEMENT APP -->
-                    <div class="project-card reveal">
-                        <div class="project-img">
-                            <img src="assets/images/factory-app.png" alt="Clothing Factory Management App">
-                        </div>
-                        <div class="project-body">
-                            <h5>Clothing Factory Management App</h5>
-                            <p>A communication and operations tracking system replacing WhatsApp for production teams.
-                                Includes order tracking, task management, admin control, and worker messaging.</p>
-                            <div class="project-tags">
-                                <span class="tag">Flutter</span>
-                                <span class="tag">Admin Panel</span>
-                                <span class="tag">Messaging</span>
-                            </div>
-                        </div>
+                    <div class="dart-badge float-badge">
+                        <svg viewBox="0 0 48 48" width="14" height="14">
+                            <path d="M9 33.5V14.5L14.5 9H33.5L39 14.5v19L33.5 39H14.5z" fill="#40C4FF" />
+                            <text x="24" y="29" text-anchor="middle" font-size="14" font-weight="bold" fill="white"
+                                font-family="Arial">D</text>
+                        </svg>
+                        Dart
                     </div>
-
+                    <div class="firebase-badge float-badge">
+                        <svg viewBox="0 0 32 32" width="14" height="14" fill="none">
+                            <path d="M5 25.5L10.5 4l6.5 12L22 9l5 16.5L16 30z" fill="#FFA000" />
+                            <path d="M5 25.5L16 30l-6-18z" fill="#F57F17" />
+                            <path d="M22 9l5 16.5L16 30l6.5-12z" fill="#FFCA28" />
+                        </svg>
+                        Firebase
+                    </div>
                 </div>
-
-            </section>
-
-            <!-- CONTACT -->
-            <section id="contact" class="reveal">
-                <div class="section-header">
-                    <h3>Let's Work Together</h3>
-                    <p>Ready to start your project? Get in touch</p>
-                </div>
-
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Tell me about your project..."
-                                required></textarea>
-                        </div>
-
-                        <div class="form-submit">
-                            <button type="submit" class="btn-primary">Send Message</button>
-                            <div id="formStatus"></div>
-                        </div>
-                    </form>
-                </div>
-            </section>
+            </div>
         </div>
 
-        <footer>
-            <div class="container">
-                <p>© 2025 Younan Gamal — Crafted with passion</p>
-            </div>
-        </footer>
-    </main>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
 
-    <script src="practes.js">
-    </script>
+    <!-- ========== ABOUT ========== -->
+    <section class="section section-alt" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">01 &mdash; About Me</span>
+                <h2 class="section-title">Driven by <span class="highlight">Passion</span> &amp; Performance</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-image-wrap reveal">
+                    <div class="about-img-frame">
+                        <div class="about-img-placeholder photo">
+                            <img src="assets/images/profile.jpg" alt="Younan Gamal" class="profile-photo" />
+                        </div>
+                        <div class="about-img-accent"></div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <span class="stat-num">40+</span>
+                            <span class="stat-label">Projects Done</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num">5+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num">1+</span>
+                            <span class="stat-label">Years Exp.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content reveal">
+                    <p class="about-text">
+                        I'm a passionate <strong>Flutter Developer &amp; Front-End Engineer</strong> based in Egypt,
+                        dedicated to building high-performance cross-platform mobile applications and beautiful web
+                        interfaces.
+                        I love turning complex problems into elegant, intuitive user experiences.
+                    </p>
+                    <p class="about-text">
+                        With a strong foundation in <strong>Clean Architecture</strong> and modern best practices, I
+                        build
+                        apps that are not just beautiful but scalable and maintainable. I thrive in collaborative
+                        environments and am always eager to tackle new challenges.
+                    </p>
+
+                    <div class="about-info-grid">
+                        <div class="info-item">
+                            <span class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                                        fill="#a78bfa" />
+                                </svg>
+                            </span>
+                            <span class="info-label">Location</span>
+                            <span class="info-value">Egypt</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                                    <path
+                                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                                        fill="#a78bfa" />
+                                </svg>
+                            </span>
+                            <span class="info-label">Email</span>
+                            <span class="info-value"><a
+                                    href="mailto:younangamal5@gmail.com">younangamal5@gmail.com</a></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                                    <path
+                                        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                                        fill="#a78bfa" />
+                                </svg>
+                            </span>
+                            <span class="info-label">Phone</span>
+                            <span class="info-value"><a href="tel:01208106259">01208106259</a></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                                    <circle cx="12" cy="12" r="3" fill="#34d399" />
+                                    <circle cx="12" cy="12" r="6" stroke="#34d399" stroke-width="1.5" fill="none" />
+                                </svg>
+                            </span>
+                            <span class="info-label">Status</span>
+                            <span class="info-value available">Open to Opportunities</span>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                        <a href="https://drive.google.com/file/d/1IRWZxDHUXJQ0mbCaw2IUr1qblsJeE_Pp/view?usp=drive_link"
+                            target="_blank" rel="noopener" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="white" />
+                            </svg>
+                            Download CV
+                        </a>
+                        <a href="https://www.linkedin.com/in/younangamal/" target="_blank" rel="noopener"
+                            class="btn btn-outline">
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path
+                                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                                    fill="currentColor" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">02 &mdash; Skills</span>
+                <h2 class="section-title">My <span class="highlight">Tech Stack</span></h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <div class="skill-icon">📱</div>
+                    <h3 class="skill-name">Flutter</h3>
+                    <p class="skill-desc">Cross-platform mobile &amp; web development with native performance</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="95"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🎯</div>
+                    <h3 class="skill-name">Dart</h3>
+                    <p class="skill-desc">Object-oriented &amp; asynchronous programming mastery</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="90"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🔥</div>
+                    <h3 class="skill-name">Firebase</h3>
+                    <p class="skill-desc">Auth, Firestore, Storage, Cloud Functions &amp; FCM</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="82"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">💻</div>
+                    <h3 class="skill-name">Front-End Development</h3>
+                    <p class="skill-desc">HTML, CSS, JavaScript — fast &amp; responsive websites</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="85"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🧱</div>
+                    <h3 class="skill-name">Clean Architecture</h3>
+                    <p class="skill-desc">MVVM, BLoC, GetX, Provider — scalable state management</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="88"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🌐</div>
+                    <h3 class="skill-name">REST APIs</h3>
+                    <p class="skill-desc">RESTful services, Dio, HTTP integration &amp; error handling</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="85"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tools-section reveal">
+                <h3 class="tools-title">Other Tools &amp; Technologies</h3>
+                <div class="tools-list">
+                    <span class="tool-tag">GetX</span>
+                    <span class="tool-tag">BLoC / Cubit</span>
+                    <span class="tool-tag">Provider</span>
+                    <span class="tool-tag">Dio</span>
+                    <span class="tool-tag">Hive</span>
+                    <span class="tool-tag">SharedPreferences</span>
+                    <span class="tool-tag">Google Maps</span>
+                    <span class="tool-tag">Push Notifications</span>
+                    <span class="tool-tag">Git &amp; GitHub</span>
+                    <span class="tool-tag">Figma</span>
+                    <span class="tool-tag">VS Code</span>
+                    <span class="tool-tag">Android Studio</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section class="section section-alt" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">03 &mdash; Projects</span>
+                <h2 class="section-title">Featured <span class="highlight">Work</span></h2>
+            </div>
+
+            <div class="projects-grid">
+                <!-- EgyTravel App -->
+                <article class="project-card reveal">
+                    <div class="project-img-preview">
+                        <img src="assets/images/egytravel.jpg" alt="EgyTravel ✈️" class="project-screenshot" />
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags-top">
+                            <span class="ptag">Flutter</span>
+                            <span class="ptag">Dart</span>
+                            <span class="ptag">REST API</span>
+                            <span class="ptag">Firebase</span>
+                        </div>
+                        <h3 class="project-name">EgyTravel ✈️</h3>
+                        <p class="project-desc">A premium Egypt travel companion app to discover amazing destinations,
+                            historical landmarks, hotels, and restaurants. Features smart search, curated
+                            recommendations, trip planning, and an immersive dark-themed UI.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/YounanGamal" class="proj-link" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Route Academy App -->
+                <article class="project-card reveal">
+                    <div class="project-img-preview">
+                        <img src="assets/images/route app.jpg" alt="Route Academy App" class="project-screenshot" />
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags-top">
+                            <span class="ptag">Flutter</span>
+                            <span class="ptag">Dart</span>
+                            <span class="ptag">Payments</span>
+                        </div>
+                        <h3 class="project-name">Route Academy App 🎓</h3>
+                        <p class="project-desc">A full course booking platform with student registration, online/offline
+                            attendance, payment integration (Visa, Vodafone Cash, Fawry), instructor profiles, and user
+                            reviews.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/YounanGamal/route_app" class="proj-link" target="_blank"
+                                rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                GitHub
+                            </a>
+                            <span class="proj-featured">Featured ★</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Smart Attendance System -->
+                <article class="project-card reveal">
+                    <div class="project-img-preview">
+                        <img src="assets/images/smart_attendance.jpg" alt="Smart Attendance System"
+                            class="project-screenshot" />
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags-top">
+                            <span class="ptag">Flutter</span>
+                            <span class="ptag">QR Code</span>
+                            <span class="ptag">Geolocation</span>
+                        </div>
+                        <h3 class="project-name">Smart Attendance System 📍</h3>
+                        <p class="project-desc">An intelligent attendance system using QR codes &amp; geolocation to
+                            verify attendance. Features real-time logs, admin dashboard, secure validation, and
+                            automated reporting.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/YounanGamal" class="proj-link" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Clothing Factory App -->
+                <article class="project-card reveal">
+                    <div class="project-img-preview">
+                        <img src="assets/images/system.jpg" alt="Clothing Factory Management"
+                            class="project-screenshot" />
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags-top">
+                            <span class="ptag">Flutter</span>
+                            <span class="ptag">Admin Panel</span>
+                            <span class="ptag">Messaging</span>
+                        </div>
+                        <h3 class="project-name">Factory Manager App 🏭</h3>
+                        <p class="project-desc">A communication and operations tracking system for production teams.
+                            Includes order tracking, task management, admin control, and worker messaging — replacing
+                            WhatsApp.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/YounanGamal" class="proj-link" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- E-commerce App -->
+                <article class="project-card reveal">
+                    <div class="project-img-preview">
+                        <img src="assets/images/e-commerce.jpg" alt="Vibrant E-commerce App"
+                            class="project-screenshot" />
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags-top">
+                            <span class="ptag">Flutter</span>
+                            <span class="ptag">Firebase</span>
+                            <span class="ptag">State Management</span>
+                        </div>
+                        <h3 class="project-name">Vibrant E-commerce App 🛒</h3>
+                        <p class="project-desc">A modern cross-platform e-commerce solution with product categories,
+                            shopping cart, user
+                            authentication, and seamless checkout experience.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/YounanGamal/fruit_hub" class="proj-link" target="_blank"
+                                rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXPERIENCE ========== -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">04 &mdash; Experience</span>
+                <h2 class="section-title">My <span class="highlight">Journey</span></h2>
+            </div>
+
+            <div class="timeline">
+                <!-- DEPI - React Track -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="tl-header-left">
+                                <div class="tl-logo">
+                                    <img src="assets/images/DEPI.png" alt="DEPI Logo" />
+                                </div>
+                                <h3 class="tl-title">Front-End Development (React) Track</h3>
+                            </div>
+                            <span class="tl-date">2024 &ndash; Present</span>
+                        </div>
+                        <p class="tl-company">Digital Egypt Pioneers Initiative (DEPI) &middot; Remote</p>
+                        <ul class="tl-list">
+                            <li>Studying advanced Front-End development with React.js, Redux, and modern web
+                                technologies.</li>
+                            <li>Building responsive and interactive web applications using clean code practices.</li>
+                            <li>Learning performance optimization and state management in complex applications.</li>
+                        </ul>
+                        <div class="tl-tags">
+                            <span class="tool-tag">React</span>
+                            <span class="tool-tag">Redux</span>
+                            <span class="tool-tag">JavaScript</span>
+                            <span class="tool-tag">CSS3</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="tl-header-left">
+                                <h3 class="tl-title">Flutter Developer &mdash; Freelance</h3>
+                            </div>
+                            <span class="tl-date">2024 &ndash; Present</span>
+                        </div>
+                        <p class="tl-company">Self-Employed &middot; Remote</p>
+                        <ul class="tl-list">
+                            <li>Developed and deployed multiple Flutter applications for clients across various domains
+                            </li>
+                            <li>Implemented Clean Architecture with BLoC/GetX for scalable state management</li>
+                            <li>Integrated Firebase services (Auth, Firestore, Cloud Functions, FCM)</li>
+                            <li>Built RESTful API integrations using Dio with proper error handling</li>
+                        </ul>
+                        <div class="tl-tags">
+                            <span class="tool-tag">Flutter</span>
+                            <span class="tool-tag">Dart</span>
+                            <span class="tool-tag">Firebase</span>
+                            <span class="tool-tag">GetX</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section section-alt" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">05 &mdash; Contact</span>
+                <h2 class="section-title">Let's <span class="highlight">Work Together</span></h2>
+                <p class="section-sub">Have a project in mind? I'd love to hear about it. Let's talk!</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Left: Info -->
+                <div class="contact-info reveal">
+                    <a href="mailto:younangamal5@gmail.com" class="contact-card contact-card-link">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+                                <path
+                                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                                    fill="#a78bfa" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="contact-label">Email</p>
+                            <span class="contact-value">younangamal5@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="tel:01208106259" class="contact-card contact-card-link">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                                    fill="#a78bfa" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="contact-label">Phone / WhatsApp</p>
+                            <span class="contact-value">01208106259</span>
+                        </div>
+                    </a>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                                    fill="#a78bfa" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="contact-label">Location</p>
+                            <span class="contact-value">Egypt (Open to Remote)</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-socials">
+                        <a href="https://github.com/YounanGamal" class="social-btn" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/younangamal/" class="social-btn" target="_blank"
+                            rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                <path
+                                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <form class="contact-form reveal" id="contactForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Project Collaboration" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                        <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z" fill="white" />
+                        </svg>
+                        Send Message
+                    </button>
+                    <p class="form-success" id="formSuccess">✓ Message sent! I'll get back to you soon.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <a href="#home" class="nav-logo">
+                    <span class="logo-bracket">&lt;</span>YG<span class="logo-bracket">/&gt;</span>
+                </a>
+                <p class="footer-copy">&copy; 2025 Younan Gamal &mdash; Crafted with ♥ &amp; Flutter passion.</p>
+                <a href="#home" class="back-to-top" aria-label="Back to top">↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="practes.js"></script>
 </body>
 
 </html>

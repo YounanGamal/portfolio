@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#0f0f1a"/>
+  <text x="32" y="40" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', 'Consolas', monospace" font-size="18" font-weight="700">
+    <tspan fill="#a78bfa">&lt;</tspan><tspan fill="#e2e8f0">YG</tspan><tspan fill="#a78bfa">/&gt;</tspan>
+  </text>
+</svg>

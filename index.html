@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="assets/YG.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
         content="Younan Gamal - Flutter Developer &amp; Front-End Engineer. Crafting beautiful, high-performance mobile &amp; web applications." />
@@ -27,6 +28,9 @@
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
@@ -310,54 +314,42 @@
                     <div class="skill-icon">📱</div>
                     <h3 class="skill-name">Flutter</h3>
                     <p class="skill-desc">Cross-platform mobile &amp; web development with native performance</p>
-                    <div class="skill-bar">
-                        <div class="skill-fill" data-width="95"></div>
-                    </div>
+
                 </div>
 
                 <div class="skill-card reveal">
                     <div class="skill-icon">🎯</div>
                     <h3 class="skill-name">Dart</h3>
                     <p class="skill-desc">Object-oriented &amp; asynchronous programming mastery</p>
-                    <div class="skill-bar">
-                        <div class="skill-fill" data-width="90"></div>
-                    </div>
+
                 </div>
 
                 <div class="skill-card reveal">
                     <div class="skill-icon">🔥</div>
                     <h3 class="skill-name">Firebase</h3>
                     <p class="skill-desc">Auth, Firestore, Storage, Cloud Functions &amp; FCM</p>
-                    <div class="skill-bar">
-                        <div class="skill-fill" data-width="82"></div>
-                    </div>
+
                 </div>
 
                 <div class="skill-card reveal">
                     <div class="skill-icon">💻</div>
                     <h3 class="skill-name">Front-End Development</h3>
                     <p class="skill-desc">HTML, CSS, JavaScript — fast &amp; responsive websites</p>
-                    <div class="skill-bar">
-                        <div class="skill-fill" data-width="85"></div>
-                    </div>
+
                 </div>
 
                 <div class="skill-card reveal">
                     <div class="skill-icon">🧱</div>
                     <h3 class="skill-name">Clean Architecture</h3>
                     <p class="skill-desc">MVVM, BLoC, GetX, Provider — scalable state management</p>
-                    <div class="skill-bar">
-                        <div class="skill-fill" data-width="88"></div>
-                    </div>
+
                 </div>
 
                 <div class="skill-card reveal">
                     <div class="skill-icon">🌐</div>
                     <h3 class="skill-name">REST APIs</h3>
                     <p class="skill-desc">RESTful services, Dio, HTTP integration &amp; error handling</p>
-                    <div class="skill-bar">
-                        <div class="skill-fill" data-width="85"></div>
-                    </div>
+
                 </div>
             </div>
 
@@ -391,7 +383,9 @@
 
             <div class="projects-grid">
                 <!-- EgyTravel App -->
-                <article class="project-card reveal">
+                <article class="project-card reveal" data-category="Flutter Development" data-status="Completed"
+                    data-features="Discover Egypt's top destinations & landmarks|Smart search with curated recommendations|Trip planning & itinerary builder|Immersive dark-themed UI with smooth animations|Hotel & restaurant discovery with ratings"
+                    data-github="https://github.com/YounanGamal">
                     <div class="project-img-preview">
                         <img src="assets/images/egytravel.jpg" alt="EgyTravel ✈️" class="project-screenshot" />
                     </div>
@@ -419,7 +413,9 @@
                 </article>
 
                 <!-- Route Academy App -->
-                <article class="project-card reveal">
+                <article class="project-card reveal" data-category="Flutter Development" data-status="Completed"
+                    data-features="Student registration & profile management|Online/offline attendance tracking|Payment integration (Visa, Vodafone Cash, Fawry)|Instructor profiles with course listings|User reviews & ratings system"
+                    data-github="https://github.com/YounanGamal/route_app">
                     <div class="project-img-preview">
                         <img src="assets/images/route app.jpg" alt="Route Academy App" class="project-screenshot" />
                     </div>
@@ -448,7 +444,9 @@
                 </article>
 
                 <!-- Smart Attendance System -->
-                <article class="project-card reveal">
+                <article class="project-card reveal" data-category="Flutter Development" data-status="Completed"
+                    data-features="QR code scanning for attendance verification|Geolocation-based presence validation|Real-time attendance logs & analytics|Admin dashboard with full control|Automated PDF report generation"
+                    data-github="https://github.com/YounanGamal">
                     <div class="project-img-preview">
                         <img src="assets/images/smart_attendance.jpg" alt="Smart Attendance System"
                             class="project-screenshot" />
@@ -476,7 +474,9 @@
                 </article>
 
                 <!-- Clothing Factory App -->
-                <article class="project-card reveal">
+                <article class="project-card reveal" data-category="Flutter Development" data-status="Completed"
+                    data-features="Real-time team messaging replacing WhatsApp|Order tracking with status updates|Task management & assignment system|Admin control panel with analytics|Worker notification system"
+                    data-github="https://github.com/YounanGamal">
                     <div class="project-img-preview">
                         <img src="assets/images/system.jpg" alt="Clothing Factory Management"
                             class="project-screenshot" />
@@ -504,7 +504,9 @@
                 </article>
 
                 <!-- E-commerce App -->
-                <article class="project-card reveal">
+                <article class="project-card reveal" data-category="Flutter Development" data-status="Completed"
+                    data-features="Product browsing with categories & filters|Shopping cart with real-time updates|User authentication & profile management|Seamless checkout experience|Firebase-powered backend & storage"
+                    data-github="https://github.com/YounanGamal/fruit_hub">
                     <div class="project-img-preview">
                         <img src="assets/images/e-commerce.jpg" alt="Vibrant E-commerce App"
                             class="project-screenshot" />
@@ -605,11 +607,458 @@
         </div>
     </section>
 
+    <!-- ========== SERVICES ========== -->
+    <section class="section section-alt" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">05 &mdash; Services</span>
+                <h2 class="section-title">What I <span class="highlight">Offer</span></h2>
+                <p class="section-sub">End-to-end development solutions tailored to bring your vision to life.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+                            <rect x="5" y="2" width="14" height="20" rx="2.5" stroke="currentColor"
+                                stroke-width="1.5" />
+                            <circle cx="12" cy="18" r="1" fill="currentColor" />
+                            <line x1="9" y1="5" x2="15" y2="5" stroke="currentColor" stroke-width="1"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Mobile App Development</h3>
+                    <p class="service-desc">Cross-platform mobile apps built with Flutter &amp; Dart — pixel-perfect UI,
+                        smooth animations, and native performance on iOS &amp; Android.</p>
+                    <ul class="service-features">
+                        <li>iOS &amp; Android from one codebase</li>
+                        <li>Custom UI/UX implementation</li>
+                        <li>Offline-first architecture</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+                            <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5" />
+                            <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Front-End Development</h3>
+                    <p class="service-desc">Responsive, modern websites using HTML, CSS, JavaScript, and React —
+                        optimized for performance and seamless user experiences.</p>
+                    <ul class="service-features">
+                        <li>Responsive &amp; accessible design</li>
+                        <li>React.js / vanilla JS</li>
+                        <li>SEO-friendly structure</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+                            <path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            <circle cx="20" cy="18" r="2.5" stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">API Integration</h3>
+                    <p class="service-desc">Seamless integration with RESTful APIs, Firebase, and third-party services —
+                        with robust error handling and state management.</p>
+                    <ul class="service-features">
+                        <li>REST API / GraphQL</li>
+                        <li>Firebase backend services</li>
+                        <li>Real-time data sync</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.5"
+                                stroke-linejoin="round" />
+                            <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linejoin="round" />
+                            <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Clean Architecture</h3>
+                    <p class="service-desc">Scalable, maintainable codebases using MVVM, BLoC, and clean code principles
+                        — built to grow with your business.</p>
+                    <ul class="service-features">
+                        <li>MVVM / BLoC / GetX patterns</li>
+                        <li>Modular project structure</li>
+                        <li>Unit &amp; widget testing</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor"
+                                stroke-width="1.5" stroke-linejoin="round" />
+                            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Auth &amp; Security</h3>
+                    <p class="service-desc">Secure authentication flows with Firebase Auth, social login, role-based
+                        access, and encrypted data handling.</p>
+                    <ul class="service-features">
+                        <li>Firebase Auth / Social Login</li>
+                        <li>Role-based access control</li>
+                        <li>Secure data storage</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5" />
+                            <path
+                                d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">UI/UX Implementation</h3>
+                    <p class="service-desc">Pixel-perfect Figma-to-code conversion with smooth animations,
+                        micro-interactions, and dark/light theme support.</p>
+                    <ul class="service-features">
+                        <li>Figma / Adobe XD to code</li>
+                        <li>Custom animations</li>
+                        <li>Theming &amp; dark mode</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRICING ========== -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">06 &mdash; Pricing</span>
+                <h2 class="section-title">Flexible <span class="highlight">Plans</span></h2>
+                <p class="section-sub">Transparent pricing to fit your project scope — from quick fixes to full-scale
+                    apps.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Starter -->
+                <div class="pricing-card reveal">
+                    <div class="pricing-header">
+                        <span class="pricing-tier">Starter</span>
+                        <div class="pricing-amount">
+                            <span class="pricing-currency">$</span>
+                            <span class="pricing-value">25</span>
+                        </div>
+                        <p class="pricing-period">per project</p>
+                    </div>
+                    <p class="pricing-desc">Ideal for small tasks, bug fixes, or single-feature implementations.</p>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Single feature / screen
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Bug fixes &amp; optimization
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            1 revision round
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            3-day delivery
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-full">Get Started</a>
+                </div>
+
+                <!-- Professional -->
+                <div class="pricing-card pricing-featured reveal">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <span class="pricing-tier">Professional</span>
+                        <div class="pricing-amount">
+                            <span class="pricing-currency">$</span>
+                            <span class="pricing-value">60</span>
+                        </div>
+                        <p class="pricing-period">per project</p>
+                    </div>
+                    <p class="pricing-desc">Full app development with multi-screen UI, API integration, and state
+                        management.</p>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Multi-screen application
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            API &amp; Firebase integration
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            State management (BLoC/GetX)
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Authentication &amp; security
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            3 revision rounds
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            14-day delivery
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-full">Get Started</a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="pricing-card reveal">
+                    <div class="pricing-header">
+                        <span class="pricing-tier">Enterprise</span>
+                        <div class="pricing-amount">
+                            <span class="pricing-currency">$</span>
+                            <span class="pricing-value">90</span>
+                        </div>
+                        <p class="pricing-period">per project</p>
+                    </div>
+                    <p class="pricing-desc">Large-scale apps with admin panels, payment systems, push notifications, and
+                        ongoing support.</p>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Everything in Professional
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Admin dashboard &amp; panel
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Payment gateway integration
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Push notifications (FCM)
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Unlimited revisions
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+                                <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            30-day post-launch support
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-full">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">07 &mdash; Testimonials</span>
+                <h2 class="section-title">What <span class="highlight">Clients Say</span></h2>
+                <p class="section-sub">Real feedback from people I've worked with on various project tracks.</p>
+            </div>
+
+            <div class="testimonials-container reveal">
+                <div class="testimonial-glow"></div>
+
+                <div class="testimonials-viewport">
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        <!-- Review 1: Ahmed Hassan -->
+                        <div class="review-card active-card">
+                            <div class="quote-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 6.79086 11.8079 5 14.017 5H15.017C15.5693 5 16.017 5.44772 16.017 6V7C16.017 7.55228 15.5693 8 15.017 8H14.017C13.4647 8 13.017 7.55228 13.017 7V6.5C13.017 6.22386 12.7931 6 12.517 6H12.017C11.4647 6 11.017 6.44772 11.017 7V9H13.017C14.1216 9 15.017 9.89543 15.017 11V14.5C15.017 15.0523 15.4647 15.5 16.017 15.5H18.017C19.1216 15.5 20.017 14.6046 20.017 13.5V6C20.017 3.79086 18.2261 2 16.017 2H14.017C11.8079 2 10.017 3.79086 10.017 6V11.5C10.017 14.2614 12.2556 16.5 15.017 16.5H17.017C17.5693 16.5 18.017 16.9477 18.017 17.5V19C18.017 19.5523 17.5693 20 17.017 20H13.017C12.4647 20 12.017 19.5523 12.017 19V18C12.017 17.4477 11.5693 17 11.017 17H9.01699C8.46471 17 8.01699 17.4477 8.01699 18V21C8.01699 23.2091 9.80785 25 12.017 25H14.017C16.2261 25 18.017 23.2091 18.017 21V20C18.017 19.4477 17.5693 19 17.017 19H14.017C13.4647 19 13.017 19.4477 13.017 20V21" />
+                                </svg>
+                            </div>
+                            <div class="review-header">
+                                <div class="reviewer-img-wrap">
+                                    <div class="reviewer-initials">AH</div>
+                                    <div class="verified-badge">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="reviewer-info">
+                                    <h4 class="reviewer-name">Ahmed Hassan</h4>
+                                    <p class="reviewer-role">Founder, TechVision</p>
+                                </div>
+                                <div class="review-rating-v2">
+                                    <span class="rating-num">5.0</span>
+                                    <div class="stars">★★★★★</div>
+                                </div>
+                            </div>
+                            <p class="review-text-v2">"Younan is an exceptional Flutter developer. He transformed our
+                                complex requirements into a smooth, high-performance app. His attention to detail and
+                                clean
+                                architecture patterns are top-notch."</p>
+                        </div>
+
+                        <!-- Review 2: Sarah Ahmed -->
+                        <div class="review-card">
+                            <div class="quote-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 6.79086 11.8079 5 14.017 5H15.017C15.5693 5 16.017 5.44772 16.017 6V7C16.017 7.55228 15.5693 8 15.017 8H14.017C13.4647 8 13.017 7.55228 13.017 7V6.5C13.017 6.22386 12.7931 6 12.517 6H12.017C11.4647 6 11.017 6.44772 11.017 7V9H13.017C14.1216 9 15.017 9.89543 15.017 11V14.5C15.017 15.0523 15.4647 15.5 16.017 15.5H18.017C19.1216 15.5 20.017 14.6046 20.017 13.5V6C20.017 3.79086 18.2261 2 16.017 2H14.017C11.8079 2 10.017 3.79086 10.017 6V11.5C10.017 14.2614 12.2556 16.5 15.017 16.5H17.017C17.5693 16.5 18.017 16.9477 18.017 17.5V19C18.017 19.5523 17.5693 20 17.017 20H13.017C12.4647 20 12.017 19.5523 12.017 19V18C12.017 17.4477 11.5693 17 11.017 17H9.01699C8.46471 17 8.01699 17.4477 8.01699 18V21C8.01699 23.2091 9.80785 25 12.017 25H14.017C16.2261 25 18.017 23.2091 18.017 21V20C18.017 19.4477 17.5693 19 17.017 19H14.017C13.4647 19 13.017 19.4477 13.017 20V21" />
+                                </svg>
+                            </div>
+                            <div class="review-header">
+                                <div class="reviewer-img-wrap">
+                                    <div class="reviewer-initials initials-alt">SA</div>
+                                    <div class="verified-badge">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="reviewer-info">
+                                    <h4 class="reviewer-name">Sarah Ahmed</h4>
+                                    <p class="reviewer-role">Manager at GlobalHub</p>
+                                </div>
+                                <div class="review-rating-v2">
+                                    <span class="rating-num">5.0</span>
+                                    <div class="stars">★★★★★</div>
+                                </div>
+                            </div>
+                            <p class="review-text-v2">"Working with Younan was a breeze. He's not only a great coder but
+                                also a great communicator. He delivered our e-commerce platform ahead of schedule with
+                                zero
+                                bugs."</p>
+                        </div>
+
+                        <!-- Review 3: Mohamed Karim -->
+                        <div class="review-card">
+                            <div class="quote-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 6.79086 11.8079 5 14.017 5H15.017C15.5693 5 16.017 5.44772 16.017 6V7C16.017 7.55228 15.5693 8 15.017 8H14.017C13.4647 8 13.017 7.55228 13.017 7V6.5C13.017 6.22386 12.7931 6 12.517 6H12.017C11.4647 6 11.017 6.44772 11.017 7V9H13.017C14.1216 9 15.017 9.89543 15.017 11V14.5C15.017 15.0523 15.4647 15.5 16.017 15.5H18.017C19.1216 15.5 20.017 14.6046 20.017 13.5V6C20.017 3.79086 18.2261 2 16.017 2H14.017C11.8079 2 10.017 3.79086 10.017 6V11.5C10.017 14.2614 12.2556 16.5 15.017 16.5H17.017C17.5693 16.5 18.017 16.9477 18.017 17.5V19C18.017 19.5523 17.5693 20 17.017 20H13.017C12.4647 20 12.017 19.5523 12.017 19V18C12.017 17.4477 11.5693 17 11.017 17H9.01699C8.46471 17 8.01699 17.4477 8.01699 18V21C8.01699 23.2091 9.80785 25 12.017 25H14.017C16.2261 25 18.017 23.2091 18.017 21V20C18.017 19.4477 17.5693 19 17.017 19H14.017C13.4647 19 13.017 19.4477 13.017 20V21" />
+                                </svg>
+                            </div>
+                            <div class="review-header">
+                                <div class="reviewer-img-wrap">
+                                    <div class="reviewer-initials initials-alt2">MK</div>
+                                    <div class="verified-badge">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="reviewer-info">
+                                    <h4 class="reviewer-name">Mohamed Karim</h4>
+                                    <p class="reviewer-role">Tech Lead, SolutionFlow</p>
+                                </div>
+                                <div class="review-rating-v2">
+                                    <span class="rating-num">5.0</span>
+                                    <div class="stars">★★★★★</div>
+                                </div>
+                            </div>
+                            <p class="review-text-v2">"The smart attendance system Younan built for us is brilliant. The
+                                QR
+                                integration and geolocation tracking are flawless. Highly recommended for any serious
+                                mobile
+                                project."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev" id="prevReview" aria-label="Previous review">
+                        <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+                            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="carousel-dots-v2" id="carouselDots"></div>
+                    <button class="carousel-btn next" id="nextReview" aria-label="Next review">
+                        <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== CONTACT ========== -->
     <section class="section section-alt" id="contact">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">05 &mdash; Contact</span>
+                <span class="section-tag">08 &mdash; Contact</span>
                 <h2 class="section-title">Let's <span class="highlight">Work Together</span></h2>
                 <p class="section-sub">Have a project in mind? I'd love to hear about it. Let's talk!</p>
             </div>
@@ -721,6 +1170,43 @@
             </div>
         </div>
     </footer>
+
+    <!-- ========== PROJECT DETAIL MODAL ========== -->
+    <div class="project-modal-overlay" id="projectModal">
+        <div class="project-modal">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <!-- Left: Image -->
+                <div class="modal-image-side">
+                    <div class="modal-image-wrap">
+                        <img src="" alt="" id="modalImage" class="modal-img" />
+                    </div>
+                </div>
+                <!-- Right: Details -->
+                <div class="modal-detail-side">
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <p class="modal-category" id="modalCategory"></p>
+
+                    <h4 class="modal-section-label">DESCRIPTION</h4>
+                    <p class="modal-description" id="modalDesc"></p>
+
+                    <h4 class="modal-section-label">KEY FEATURES</h4>
+                    <ul class="modal-features" id="modalFeatures"></ul>
+
+                    <h4 class="modal-section-label">TECHNOLOGIES</h4>
+                    <div class="modal-tech-tags" id="modalTech"></div>
+
+                    <a href="#" class="modal-source-btn" id="modalGithub" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                        Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="practes.js"></script>
 </body>

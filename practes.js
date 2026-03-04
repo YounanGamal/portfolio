@@ -9,8 +9,8 @@ window.addEventListener('scroll', () => {
 });
 
 // ── Active nav link on scroll ─────────────────────────────────
-const sections  = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', () => {
     let current = '';
@@ -71,9 +71,9 @@ const phrases = [
     'Clean Architecture 🧱',
 ];
 
-let phraseIndex  = 0;
-let charIndex    = 0;
-let isDeleting   = false;
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
 function typeLoop() {
     const current = phrases[phraseIndex];
@@ -132,18 +132,193 @@ skillFills.forEach(fill => skillObserver.observe(fill));
 function handleFormSubmit(e) {
     e.preventDefault();
 
-    const btn     = document.getElementById('submitBtn');
+    const btn = document.getElementById('submitBtn');
     const success = document.getElementById('formSuccess');
 
-    btn.disabled    = true;
+    btn.disabled = true;
     btn.textContent = 'Sending...';
 
     setTimeout(() => {
-        btn.disabled    = false;
-        btn.innerHTML   = `<svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z" fill="white"/></svg> Send Message`;
+        btn.disabled = false;
+        btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z" fill="white"/></svg> Send Message`;
         success.classList.add('show');
         e.target.reset();
 
         setTimeout(() => success.classList.remove('show'), 4000);
     }, 1200);
 }
+
+// ── Project Detail Modal ──────────────────────────────────
+const projectModal = document.getElementById('projectModal');
+const modalClose = document.getElementById('modalClose');
+const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
+const modalCategory = document.getElementById('modalCategory');
+const modalDesc = document.getElementById('modalDesc');
+const modalFeatures = document.getElementById('modalFeatures');
+const modalTech = document.getElementById('modalTech');
+const modalGithub = document.getElementById('modalGithub');
+
+const techColors = [
+    '#ef4444', '#f97316', '#eab308', '#22c55e',
+    '#06b6d4', '#6366f1', '#a855f7', '#ec4899'
+];
+
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+        // Don't open modal if clicking a link inside the card
+        if (e.target.closest('a')) return;
+
+        const img = card.querySelector('.project-screenshot');
+        const name = card.querySelector('.project-name');
+        const desc = card.querySelector('.project-desc');
+        const tags = card.querySelectorAll('.ptag');
+        const category = card.dataset.category || 'Development';
+        const status = card.dataset.status || 'Completed';
+        const features = (card.dataset.features || '').split('|').filter(Boolean);
+        const github = card.dataset.github || '#';
+
+        // Populate modal
+        modalImage.src = img?.src || '';
+        modalImage.alt = img?.alt || '';
+        modalTitle.textContent = name?.textContent || '';
+        modalCategory.textContent = `${category} \u00b7 ${status}`;
+        modalDesc.textContent = desc?.textContent || '';
+
+        // Features
+        modalFeatures.innerHTML = '';
+        features.forEach(f => {
+            const li = document.createElement('li');
+            li.textContent = f.trim();
+            modalFeatures.appendChild(li);
+        });
+
+        // Tech tags
+        modalTech.innerHTML = '';
+        tags.forEach((tag, i) => {
+            const span = document.createElement('span');
+            span.className = 'modal-tech-tag';
+            span.textContent = tag.textContent;
+            span.style.background = techColors[i % techColors.length];
+            modalTech.appendChild(span);
+        });
+
+        // GitHub link
+        modalGithub.href = github;
+
+        // Open modal
+        projectModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Close modal
+function closeProjectModal() {
+    projectModal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+modalClose.addEventListener('click', closeProjectModal);
+
+projectModal.addEventListener('click', (e) => {
+    if (e.target === projectModal) closeProjectModal();
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+        closeProjectModal();
+    }
+});
+
+// ── Testimonials Carousel ─────────────────────────────────
+const track = document.getElementById('testimonialsTrack');
+const dotsContainer = document.getElementById('carouselDots');
+const prevBtn = document.getElementById('prevReview');
+const nextBtn = document.getElementById('nextReview');
+const reviews = document.querySelectorAll('.review-card');
+
+let currentReview = 0;
+const totalReviews = reviews.length;
+
+// Create dots
+reviews.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+    dot.addEventListener('click', () => goToReview(i));
+    dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.carousel-dot');
+
+function updateCarousel() {
+    const viewport = document.querySelector('.testimonials-viewport');
+    if (!viewport || reviews.length === 0) return;
+
+    const viewportWidth = viewport.offsetWidth;
+    const cardWidth = reviews[0].offsetWidth;
+    const gap = 30; // Matches CSS gap
+
+    // Position of current card start relative to track start
+    const cardPosition = currentReview * (cardWidth + gap);
+
+    // Calculate shift to center the card
+    const shift = cardPosition - (viewportWidth / 2 - cardWidth / 2);
+
+    track.style.transform = `translateX(${-shift}px)`;
+
+    // Update dots
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentReview);
+    });
+
+    // Update active card class
+    reviews.forEach((card, i) => {
+        card.classList.toggle('active-card', i === currentReview);
+    });
+}
+
+// Re-calculate on resize
+window.addEventListener('resize', updateCarousel);
+
+function goToReview(index) {
+    currentReview = index;
+    updateCarousel();
+    resetAutoPlay();
+}
+
+function nextReview() {
+    currentReview = (currentReview + 1) % totalReviews;
+    updateCarousel();
+}
+
+function prevReview() {
+    currentReview = (currentReview - 1 + totalReviews) % totalReviews;
+    updateCarousel();
+}
+
+nextBtn.addEventListener('click', () => {
+    nextReview();
+    resetAutoPlay();
+});
+
+prevBtn.addEventListener('click', () => {
+    prevReview();
+    resetAutoPlay();
+});
+
+// Auto-play
+let autoPlayInterval = setInterval(nextReview, 3000);
+
+function resetAutoPlay() {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(nextReview, 3000);
+}
+
+// Pause auto-play on hover
+track.parentElement.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+track.parentElement.addEventListener('mouseleave', () => {
+    autoPlayInterval = setInterval(nextReview, 3000);
+});
+
+// Initial call
+updateCarousel();

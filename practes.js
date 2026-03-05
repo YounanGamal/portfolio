@@ -251,20 +251,8 @@ reviews.forEach((_, i) => {
 const dots = document.querySelectorAll('.carousel-dot');
 
 function updateCarousel() {
-    const viewport = document.querySelector('.testimonials-viewport');
-    if (!viewport || reviews.length === 0) return;
-
-    const viewportWidth = viewport.offsetWidth;
-    const cardWidth = reviews[0].offsetWidth;
-    const gap = 30; // Matches CSS gap
-
-    // Position of current card start relative to track start
-    const cardPosition = currentReview * (cardWidth + gap);
-
-    // Calculate shift to center the card
-    const shift = cardPosition - (viewportWidth / 2 - cardWidth / 2);
-
-    track.style.transform = `translateX(${-shift}px)`;
+    // Single card takes full container width, use percentage shift
+    track.style.transform = `translateX(-${currentReview * 100}%)`;
 
     // Update dots
     dots.forEach((dot, i) => {
@@ -317,8 +305,5 @@ function resetAutoPlay() {
 // Pause auto-play on hover
 track.parentElement.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
 track.parentElement.addEventListener('mouseleave', () => {
-    autoPlayInterval = setInterval(nextReview, 3000);
+    autoPlayInterval = setInterval(nextReview, 5000);
 });
-
-// Initial call
-updateCarousel();

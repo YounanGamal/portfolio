@@ -1871,15 +1871,14 @@ button {
 .testimonials-container {
     padding: 60px 0 80px;
     position: relative;
-    max-width: 1000px;
-    /* Wider to allow side peeks */
+    max-width: 800px;
+    /* Focused single card width */
     margin: 0 auto;
 }
 
 .testimonials-viewport {
     overflow: hidden;
-    padding: 40px 0;
-    position: relative;
+    padding: 20px 0;
 }
 
 /* Ambient Background Glow */
@@ -1909,18 +1908,14 @@ button {
     }
 }
 
-
-
 .testimonials-track {
     display: flex;
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    gap: 30px;
-    /* Space between cards */
 }
 
 .review-card {
-    flex: 0 0 750px;
-    /* Fixed width for focus card */
+    flex: 0 0 100%;
+    /* Single card takes full width */
     padding: 45px 40px;
     background: rgba(17, 18, 23, 0.4);
     backdrop-filter: blur(20px);
@@ -1929,30 +1924,20 @@ button {
     border-radius: 28px;
     position: relative;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    opacity: 0.3;
-    /* Dull side cards */
-    transform: scale(0.85);
-    /* Smaller side cards */
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 1;
+    transform: none;
     display: flex;
     flex-direction: column;
+    min-height: auto;
 }
 
 .review-card.active-card {
     opacity: 1;
-    transform: scale(1.009);
-    /* Slightly pop out the active card */
+    transform: none;
     background: rgba(17, 18, 23, 0.6);
     border-color: rgba(99, 102, 241, 0.3);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 25px rgba(99, 102, 241, 0.15);
-    z-index: 2;
-}
-
-@media (max-width: 768px) {
-    .review-card {
-        flex: 0 0 85%;
-        /* Fluid on small screens */
-    }
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(99, 102, 241, 0.1);
 }
 
 @media (max-width: 1250px) {

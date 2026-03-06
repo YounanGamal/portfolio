@@ -11,8 +11,8 @@ const projectsData = [
         image: "assets/images/egytravel.jpg",
         images: [
             "assets/images/egytravel.jpg",
-            "https://via.placeholder.com/600x400/1a1a2e/ffffff?text=EgyTravel+Map",
-            "https://via.placeholder.com/600x400/1a1a2e/ffffff?text=EgyTravel+Guide"
+            "assets/egy/5.png",
+            "assets/egy/6.png",
         ],
         tags: ["Flutter", "Dart", "REST API", "Firebase"],
         features: [
@@ -33,8 +33,9 @@ const projectsData = [
         image: "assets/images/route app.jpg",
         images: [
             "assets/images/route app.jpg",
-            "https://via.placeholder.com/600x400/1a1a2e/ffffff?text=Route+Courses",
-            "https://via.placeholder.com/600x400/1a1a2e/ffffff?text=Route+Profile"
+            "assets/route/9.png",
+            "assets/route/7.png",
+            "assets/route/8.png",
         ],
         tags: ["Flutter", "Dart", "Payments"],
         features: [

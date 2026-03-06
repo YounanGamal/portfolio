@@ -62,6 +62,8 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -70,6 +72,8 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
     transition: background 0.3s, color 0.3s;
 }
 
@@ -1463,11 +1467,17 @@ button {
 }
 
 .service-features li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
+    content: "✓";
     color: var(--primary-light);
-    font-weight: 700;
+    font-weight: bold;
+}
+
+.services-cta-wrap {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 /* ============================================================
@@ -1713,12 +1723,13 @@ button {
 
 .modal-image-side {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    /* Stack image/nav and thumbnails vertically */
     justify-content: center;
     padding: 32px;
     background: var(--bg-2);
     border-radius: 24px 0 0 24px;
-    overflow: hidden;
+    /* overflow: hidden; removed to allow thumb slider room if needed, but flex-col handles it */
 }
 
 .modal-image-wrap {
@@ -1727,6 +1738,49 @@ button {
     overflow: hidden;
     border: 1px solid var(--border);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    /* Ensure it contains the absolute nav buttons */
+}
+
+/* Gallery Navigation */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(17, 18, 23, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.gallery-nav:hover {
+    background: var(--primary);
+    border-color: var(--primary-light);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav svg {
+    width: 20px;
+    height: 20px;
+}
+
+.gallery-nav.prev {
+    left: 16px;
+}
+
+.gallery-nav.next {
+    right: 16px;
 }
 
 .modal-img {
@@ -1734,6 +1788,47 @@ button {
     height: auto;
     display: block;
     object-fit: cover;
+}
+
+.modal-thumbnails {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    /* space for scrollbar if needed */
+}
+
+/* Hide scrollbar for cleaner look */
+.modal-thumbnails::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-thumbnails {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.modal-thumb {
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.modal-thumb:hover {
+    opacity: 0.9;
+}
+
+.modal-thumb.active {
+    opacity: 1;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
 }
 
 .modal-detail-side {
@@ -2481,15 +2576,15 @@ button {
     }
 
     .flutter-badge {
-        right: -20px;
+        right: 0;
     }
 
     .dart-badge {
-        right: -30px;
+        right: 0;
     }
 
     .firebase-badge {
-        left: -20px;
+        left: 0;
     }
 }
 

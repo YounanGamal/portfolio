@@ -269,22 +269,31 @@ const testimonialsData = [
         name: "Ahmed Hassan",
         role: "Founder, TechVision",
         initials: "AH",
+        avatar: "assets/images/avatar1.png",
+        project: "Route Academy App 🎓",
         text: "Younan is an exceptional Flutter developer. He transformed our complex requirements into a smooth, high-performance app with a stunning aesthetic. His dedication to clean architecture and attention to detail are rare.",
-        rating: "5.0"
+        rating: "5.0",
+        badge: "Verified Client"
     },
     {
         name: "Sarah Ahmed",
         role: "Product Manager at GlobalHub",
         initials: "SA",
+        avatar: "assets/images/avatar2.png",
+        project: "Vibrant E-Commerce 🛒",
         text: "Working with Younan was seamless. He communicates clearly, understands product priorities immediately, and delivered our cross-platform solution ahead of schedule with zero breaking bugs.",
-        rating: "5.0"
+        rating: "5.0",
+        badge: "Verified Client"
     },
     {
         name: "Mohamed Karim",
         role: "Tech Lead, SolutionFlow",
         initials: "MK",
+        avatar: "assets/images/avatar3.png",
+        project: "Smart Attendance System 📍",
         text: "The smart attendance & geolocation system Younan built for our team is flawless. The QR integration and real-time analytics work without a hitch. Highly recommended for any serious mobile project.",
-        rating: "5.0"
+        rating: "5.0",
+        badge: "Verified Client"
     }
 ];
 
@@ -650,39 +659,51 @@ function initProjectFilters() {
     });
 }
 
-// ── Render Testimonials ───────────────────────────────────────
+// ── Render Testimonials (Clean Image-Free Manual Carousel) ──
 function renderTestimonials() {
     const track = document.getElementById('testimonialsTrack');
     if (!track) return;
 
-    track.innerHTML = testimonialsData.map(rev => `
-        <div class="review-card">
-            <div class="quote-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 6.79086 11.8079 5 14.017 5H15.017C15.5693 5 16.017 5.44772 16.017 6V7C16.017 7.55228 15.5693 8 15.017 8H14.017C13.4647 8 13.017 7.55228 13.017 7V6.5C13.017 6.22386 12.7931 6 12.517 6H12.017C11.4647 6 11.017 6.44772 11.017 7V9H13.017C14.1216 9 15.017 9.89543 15.017 11V14.5C15.017 15.0523 15.4647 15.5 16.017 15.5H18.017C19.1216 15.5 20.017 14.6046 20.017 13.5V6C20.017 3.79086 18.2261 2 16.017 2H14.017C11.8079 2 10.017 3.79086 10.017 6V11.5C10.017 14.2614 12.2556 16.5 15.017 16.5H17.017C17.5693 16.5 18.017 16.9477 18.017 17.5V19C18.017 19.5523 17.5693 20 17.017 20H13.017C12.4647 20 12.017 19.5523 12.017 19V18C12.017 17.4477 11.5693 17 11.017 17H9.01699C8.46471 17 8.01699 17.4477 8.01699 18V21C8.01699 23.2091 9.80785 25 12.017 25H14.017C16.2261 25 18.017 23.2091 18.017 21V20C18.017 19.4477 17.5693 19 17.017 19H14.017C13.4647 19 13.017 19.4477 13.017 20V21" />
-                </svg>
-            </div>
-            <div class="review-header">
-                <div class="reviewer-img-wrap">
-                    <div class="reviewer-initials">${rev.initials}</div>
-                    <div class="verified-badge">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11">
+    track.innerHTML = testimonialsData.map((rev, idx) => `
+        <div class="review-card-item" data-index="${idx}">
+            <div class="rev-card-header">
+                <div class="reviewer-initials-badge">
+                    <span>${rev.initials}</span>
+                    <div class="rev-verified-chip" title="Verified Client">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="9" height="9">
                             <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                         </svg>
                     </div>
                 </div>
-                <div class="reviewer-info">
-                    <h4 class="reviewer-name">${rev.name}</h4>
-                    <p class="reviewer-role">${rev.role}</p>
+                <div class="reviewer-meta">
+                    <div class="reviewer-name-row">
+                        <h4 class="reviewer-name-v3">${rev.name}</h4>
+                        <span class="rev-proj-tag">${rev.project}</span>
+                    </div>
+                    <p class="reviewer-role-v3">${rev.role}</p>
                 </div>
-                <div class="review-rating-v2">
-                    <span class="rating-num">${rev.rating}</span>
-                    <div class="stars">★★★★★</div>
+                <div class="rev-rating-pill">
+                    <span class="rev-score">${rev.rating}</span>
+                    <span class="rev-star">★</span>
                 </div>
             </div>
-            <p class="review-text-v2">"${rev.text}"</p>
+
+            <p class="rev-quote-body">"${rev.text}"</p>
+
+            <div class="rev-card-footer">
+                <span class="rev-stars-row">★★★★★</span>
+                <span class="rev-verified-text">
+                    <svg viewBox="0 0 24 24" fill="none" width="12" height="12" stroke="currentColor" stroke-width="2.5">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    Verified Review
+                </span>
+            </div>
         </div>
     `).join('');
+
+    initCarousel();
 }
 
 // ── Navbar Scroll & Active State ──────────────────────────────
@@ -1149,54 +1170,77 @@ if (projectModal) {
     });
 }
 
-// ── Testimonials Carousel ─────────────────────────────────────
+// ── Testimonials Carousel (Manual Touch & Arrow Scroll - No Auto-Scroll) ──
 function initCarousel() {
+    const viewport = document.getElementById('testimonialsViewport');
     const track = document.getElementById('testimonialsTrack');
     const dotsContainer = document.getElementById('carouselDots');
     const prevBtn = document.getElementById('prevReview');
     const nextBtn = document.getElementById('nextReview');
-    if (!track || !dotsContainer) return;
+    if (!track) return;
 
-    const cards = track.querySelectorAll('.review-card');
+    const cards = track.querySelectorAll('.review-card-item');
     if (!cards.length) return;
 
     let currentIndex = 0;
     const total = cards.length;
 
-    dotsContainer.innerHTML = cards.length > 1 
-        ? Array.from(cards).map((_, i) => `<div class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="goToReview(${i})"></div>`).join('') 
-        : '';
+    if (dotsContainer) {
+        dotsContainer.innerHTML = Array.from(cards).map((_, i) => 
+            `<button class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="goToReview(${i})" aria-label="Go to review ${i + 1}"></button>`
+        ).join('');
+    }
 
-    function updateView() {
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    function updateDots(idx) {
+        currentIndex = idx;
+        if (!dotsContainer) return;
         const dots = dotsContainer.querySelectorAll('.carousel-dot');
-        dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
     }
 
     window.goToReview = function(idx) {
+        if (idx < 0) idx = total - 1;
+        if (idx >= total) idx = 0;
         currentIndex = idx;
-        updateView();
-        resetTimer();
+        const targetCard = cards[currentIndex];
+        if (targetCard && viewport) {
+            const cardLeft = targetCard.offsetLeft - track.offsetLeft;
+            viewport.scrollTo({ left: cardLeft, behavior: 'smooth' });
+        }
+        updateDots(currentIndex);
     };
 
-    function next() {
-        currentIndex = (currentIndex + 1) % total;
-        updateView();
+    if (nextBtn) {
+        nextBtn.onclick = () => {
+            goToReview((currentIndex + 1) % total);
+        };
     }
 
-    function prev() {
-        currentIndex = (currentIndex - 1 + total) % total;
-        updateView();
+    if (prevBtn) {
+        prevBtn.onclick = () => {
+            goToReview((currentIndex - 1 + total) % total);
+        };
     }
 
-    if (nextBtn) nextBtn.onclick = () => { next(); resetTimer(); };
-    if (prevBtn) prevBtn.onclick = () => { prev(); resetTimer(); };
-
-    let timer = setInterval(next, 5000);
-    function resetTimer() {
-        clearInterval(timer);
-        timer = setInterval(next, 5000);
+    // Update active dot when user manually swipes/scrolls on mobile or trackpad
+    if (viewport) {
+        let scrollTimeout;
+        viewport.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                const scrollLeft = viewport.scrollLeft;
+                const cardWidth = viewport.clientWidth;
+                if (cardWidth > 0) {
+                    const closestIdx = Math.round(scrollLeft / cardWidth);
+                    if (closestIdx >= 0 && closestIdx < total && closestIdx !== currentIndex) {
+                        updateDots(closestIdx);
+                    }
+                }
+            }, 60);
+        }, { passive: true });
     }
+
+    // STRICTLY NO AUTO-SCROLL (User manual control only as requested)
 }
 
 // ── RAYCAST COMMAND PALETTE (⌘K / Ctrl+K) ──────────────────────

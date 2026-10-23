@@ -1413,11 +1413,19 @@ button {
 }
 
 .about-lead-bio {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    line-height: 1.8;
-    max-width: 530px;
-    margin-bottom: 20px;
+    line-height: 1.7;
+    max-width: 540px;
+    margin-bottom: 22px;
+}
+
+.about-lead-bio p {
+    margin: 0 0 12px 0;
+}
+
+.about-lead-bio p:last-child {
+    margin-bottom: 0;
 }
 
 .about-lead-bio strong {

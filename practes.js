@@ -1170,10 +1170,11 @@ if (projectModal) {
     });
 }
 
-// ── Testimonials Carousel (Manual Touch & Arrow Scroll - No Auto-Scroll) ──
+// ── Testimonials Carousel (Smooth Auto-Scroll with Pause on Hover/Touch) ──
 function initCarousel() {
     const viewport = document.getElementById('testimonialsViewport');
     const track = document.getElementById('testimonialsTrack');
+    const sliderBox = document.querySelector('.testimonials-slider-box');
     const dotsContainer = document.getElementById('carouselDots');
     const prevBtn = document.getElementById('prevReview');
     const nextBtn = document.getElementById('nextReview');
@@ -1184,6 +1185,8 @@ function initCarousel() {
 
     let currentIndex = 0;
     const total = cards.length;
+    let autoScrollTimer = null;
+    const AUTO_SCROLL_DELAY = 4200; // 4.2 seconds per review card
 
     if (dotsContainer) {
         dotsContainer.innerHTML = Array.from(cards).map((_, i) => 
@@ -1198,7 +1201,7 @@ function initCarousel() {
         dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
     }
 
-    window.goToReview = function(idx) {
+    window.goToReview = function(idx, manual = true) {
         if (idx < 0) idx = total - 1;
         if (idx >= total) idx = 0;
         currentIndex = idx;
@@ -1208,25 +1211,62 @@ function initCarousel() {
             viewport.scrollTo({ left: cardLeft, behavior: 'smooth' });
         }
         updateDots(currentIndex);
+        if (manual) {
+            restartAutoScroll();
+        }
     };
+
+    function nextReview() {
+        goToReview((currentIndex + 1) % total, false);
+    }
+
+    function prevReview() {
+        goToReview((currentIndex - 1 + total) % total, false);
+    }
 
     if (nextBtn) {
         nextBtn.onclick = () => {
-            goToReview((currentIndex + 1) % total);
+            goToReview((currentIndex + 1) % total, true);
         };
     }
 
     if (prevBtn) {
         prevBtn.onclick = () => {
-            goToReview((currentIndex - 1 + total) % total);
+            goToReview((currentIndex - 1 + total) % total, true);
         };
     }
 
-    // Update active dot when user manually swipes/scrolls on mobile or trackpad
+    // Auto-Scroll Engine
+    function startAutoScroll() {
+        stopAutoScroll();
+        autoScrollTimer = setInterval(nextReview, AUTO_SCROLL_DELAY);
+    }
+
+    function stopAutoScroll() {
+        if (autoScrollTimer) {
+            clearInterval(autoScrollTimer);
+            autoScrollTimer = null;
+        }
+    }
+
+    function restartAutoScroll() {
+        stopAutoScroll();
+        startAutoScroll();
+    }
+
+    // Pause auto-scroll on hover (desktop)
+    const hoverTarget = sliderBox || viewport;
+    if (hoverTarget) {
+        hoverTarget.addEventListener('mouseenter', stopAutoScroll);
+        hoverTarget.addEventListener('mouseleave', startAutoScroll);
+    }
+
+    // Update active dot and pause/restart when user manually swipes/scrolls
     if (viewport) {
         let scrollTimeout;
         viewport.addEventListener('scroll', () => {
             clearTimeout(scrollTimeout);
+            stopAutoScroll();
             scrollTimeout = setTimeout(() => {
                 const scrollLeft = viewport.scrollLeft;
                 const cardWidth = viewport.clientWidth;
@@ -1236,11 +1276,19 @@ function initCarousel() {
                         updateDots(closestIdx);
                     }
                 }
-            }, 60);
+                startAutoScroll();
+            }, 80);
+        }, { passive: true });
+
+        // Touch event handling for mobile devices
+        viewport.addEventListener('touchstart', stopAutoScroll, { passive: true });
+        viewport.addEventListener('touchend', () => {
+            setTimeout(startAutoScroll, 1500);
         }, { passive: true });
     }
 
-    // STRICTLY NO AUTO-SCROLL (User manual control only as requested)
+    // Start auto-scroll
+    startAutoScroll();
 }
 
 // ── RAYCAST COMMAND PALETTE (⌘K / Ctrl+K) ──────────────────────

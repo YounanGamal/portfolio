@@ -3,36 +3,44 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="assets/YG.jpg">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="alternate icon" type="image/jpeg" href="assets/YG.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Younan Gamal - Flexible Pricing Plans for Flutter & Front-End Development." />
-    <title>Pricing | Younan Gamal</title>
+    <meta name="description" content="Younan Gamal - Flexible Pricing Plans for Flutter &amp; Front-End Development." />
+    <title>Pricing Plans &mdash; Younan Gamal</title>
+    
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css" />
     <style>
-        /* Standalone page adjustments */
         .pricing-hero {
-            padding-top: 80px;
-            padding-bottom: 60px;
+            padding-top: 100px;
+            padding-bottom: 50px;
             text-align: center;
         }
 
         .back-home-wrap {
             display: flex;
             justify-content: flex-start;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
         }
 
         .back-home {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: var(--primary-light);
-            font-weight: 600;
-            transition: transform 0.2s;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            color: var(--color-ash);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .back-home:hover {
-            transform: translateX(-5px);
+            color: var(--color-pure-white);
+            transform: translateX(-4px);
         }
     </style>
 </head>
@@ -43,25 +51,24 @@
         <div class="container">
             <div class="back-home-wrap">
                 <a href="index.html" class="btn btn-outline back-home">
-                    <svg viewBox="0 0 24 24" fill="none" width="20" height="20" stroke="currentColor" stroke-width="2"
+                    <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <line x1="19" y1="12" x2="5" y2="12"></line>
                         <polyline points="12 19 5 12 12 5"></polyline>
                     </svg>
-                    Back to Home
+                    Back to Portfolio
                 </a>
             </div>
             <div class="section-header">
-                <span class="section-tag">Pricing Plans</span>
-                <h1 class="section-title">Flexible <span class="highlight">Plans</span> for Your Vision</h1>
-                <p class="section-sub">Transparent pricing to fit your project scope — from quick fixes to full-scale
-                    apps.</p>
+                <span class="section-tag">01 &mdash; Engineering Rates</span>
+                <h1 class="section-title">Transparent <span class="highlight">Plans</span> for Every Scope</h1>
+                <p class="section-sub">Flexible project retainers and sprint-based pricing to launch your mobile &amp; web apps with speed.</p>
             </div>
         </div>
     </header>
 
     <!-- ========== PRICING SECTION ========== -->
-    <section class="section" style="padding-top: 0;">
+    <section class="section" style="padding-top: 0; border-top: none;">
         <div class="container">
             <div class="pricing-grid">
                 <!-- Cards injected here via pricing.js -->
@@ -74,9 +81,11 @@
         <div class="container">
             <div class="footer-inner">
                 <a href="index.html#home" class="nav-logo">
-                    <span class="logo-bracket">&lt;</span>YG<span class="logo-bracket">/&gt;</span>
+                    <span class="logo-diamond">❖</span>
+                    <span class="logo-title">Younan Gamal</span>
+                    <span class="logo-sub">&copy; 2026</span>
                 </a>
-                <p class="footer-copy">&copy; 2025 Younan Gamal &mdash; Crafted with ♥ &amp; Flutter passion.</p>
+                <p class="footer-copy">Midnight Command Center Design &middot; Built with Passion</p>
                 <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
             </div>
         </div>

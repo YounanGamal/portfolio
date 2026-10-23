@@ -1,57 +1,58 @@
 /* ============================================================
    PRICING PAGE LOGIC
+   Theme: Raycast Midnight Command Center
    ============================================================ */
 
 // ── Pricing Data ──────────────────────────────────────────────
 const pricingData = [
     {
-        tier: "Starter",
+        tier: "Starter Sprint",
         price: "25",
-        period: "per project",
-        desc: "Ideal for small tasks, bug fixes, or single-feature implementations.",
+        period: "per deliverable",
+        desc: "Ideal for rapid single-screen implementation, targeted UI bugs, or performance profiling.",
         features: [
-            "Single feature / screen",
-            "Bug fixes & optimization",
-            "1 revision round",
-            "3-day delivery"
+            "Single feature or complex UI screen",
+            "Bug fixing, profiling & refactoring",
+            "1 revision round included",
+            "3-day turnaround delivery"
         ],
         btnClass: "btn-outline",
-        btnText: "Get Started",
+        btnText: "Choose Starter",
         featured: false
     },
     {
-        tier: "Professional",
+        tier: "Full MVP App",
         price: "60",
-        period: "per project",
-        desc: "Full app development with multi-screen UI, API integration, and state management.",
+        period: "per milestone",
+        desc: "Full multi-screen cross-platform application with state management, Firebase backend, and offline caching.",
         features: [
-            "Multi-screen application",
-            "API & Firebase integration",
-            "State management (BLoC/GetX)",
-            "Authentication & security",
-            "3 revision rounds",
-            "14-day delivery"
+            "Complete multi-screen application",
+            "REST API & Firebase Cloud sync",
+            "BLoC / Cubit Clean Architecture",
+            "Biometric auth & secure storage",
+            "3 revision rounds included",
+            "14-day production delivery"
         ],
         btnClass: "btn-primary",
-        btnText: "Get Started",
+        btnText: "Choose Professional",
         featured: true,
         badge: "Most Popular"
     },
     {
-        tier: "Enterprise",
+        tier: "Enterprise Suite",
         price: "90",
-        period: "per project",
-        desc: "Large-scale apps with admin panels, payment systems, push notifications, and ongoing support.",
+        period: "per milestone",
+        desc: "Large-scale cross-platform ecosystem with back-office admin dashboard, push notifications, and dedicated support.",
         features: [
-            "Everything in Professional",
-            "Admin dashboard & panel",
-            "Payment gateway integration",
-            "Push notifications (FCM)",
-            "Unlimited revisions",
-            "30-day post-launch support"
+            "Everything in Full MVP App",
+            "Web / desktop admin dashboard",
+            "Payment gateway integrations",
+            "FCM push notifications & analytics",
+            "Unlimited sprint revisions",
+            "30-day post-launch warranty"
         ],
         btnClass: "btn-outline",
-        btnText: "Contact Me",
+        btnText: "Discuss Enterprise",
         featured: false
     }
 ];
@@ -76,10 +77,10 @@ function renderPricingCards() {
             <ul class="pricing-features">
                 ${plan.features.map(feature => `
                     <li>
-                        <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
-                            <path d="M5 13l4 4L19 7" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="var(--color-coral-pulse)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
-                        ${feature}
+                        <span>${feature}</span>
                     </li>
                 `).join('')}
             </ul>
@@ -93,18 +94,9 @@ function renderPricingCards() {
     }
 }
 
-// ── Re-using Shared Logic (Navbar, Theme, Scroll) ────────────
+// ── Initialization ───────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-    // Render the cards
     renderPricingCards();
-
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    if (navbar) {
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
-    }
 
     // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
@@ -112,30 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (localStorage.getItem('theme') === 'light') {
         html.setAttribute('data-theme', 'light');
-        if (themeToggle) themeToggle.textContent = '☀️';
     }
 
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const isLight = html.getAttribute('data-theme') === 'light';
-            html.setAttribute('data-theme', isLight ? 'dark' : 'light');
-            themeToggle.textContent = isLight ? '🌙' : '☀️';
-            localStorage.setItem('theme', isLight ? 'dark' : 'light');
-        });
-    }
-
-    // Hamburger menu
-    const hamburger = document.getElementById('hamburger');
-    const navLinksMenu = document.getElementById('nav-links');
-
-    if (hamburger && navLinksMenu) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('open');
-            navLinksMenu.classList.toggle('open');
-        });
-    }
-
-    // Reveal on scroll
+    // Scroll reveal observer
     const reveals = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -146,6 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
 
-    window.revealObserver = revealObserver; // Export to global for renderPricingCards
+    window.revealObserver = revealObserver;
     reveals.forEach(el => revealObserver.observe(el));
 });

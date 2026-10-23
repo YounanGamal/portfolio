@@ -132,7 +132,7 @@ const projectsData = [
         images: [
             "assets/images/system.jpg"
         ],
-        tags: ["Flutter", "Admin Panel", "Enterprise", "BLoC State", "Real-time Sync"],
+        tags: ["Flutter", "Supabase", "Admin Panel", "Enterprise", "BLoC State", "Real-time Sync"],
         highlights: [
             { icon: "💬", text: "Structured internal messaging replacing WhatsApp" },
             { icon: "📦", text: "Live order tracking with milestone stages" },
@@ -167,7 +167,7 @@ const projectsData = [
         images: [
             "assets/images/e-commerce.jpg"
         ],
-        tags: ["Flutter", "Firebase Cloud", "GetX", "Cart Sync", "Payment Ready"],
+        tags: ["Flutter", "Supabase & Firebase", "GetX", "Cart Sync", "Payment Ready"],
         highlights: [
             { icon: "🛍️", text: "Real-time reactive cart synchronization" },
             { icon: "⚡", text: "Firebase Cloud Firestore & Auth pipeline" },
@@ -227,20 +227,20 @@ const projectsData = [
     {
         id: "elshaib-farms",
         number: "07",
-        name: "Elshaib Farms ERP 🌿",
+        name: "Elshaib Farms 🌿",
         badge: "Enterprise Supply Chain & Logistics",
         category: "Systems",
         status: "Production Ready",
         accentColor: "#10b981",
         accentGlow: "rgba(16, 185, 129, 0.28)",
-        tagline: "Agricultural ERP, Live Stock Control & PDF Accounting",
-        desc: "An enterprise-grade Flutter mobile ERP and logistics suite designed for Elshaib Poultry & Agricultural Farms. Integrates live inventory control, order fulfillment workflows, egg production monitoring, dynamic discount coupon engine, zone-based delivery calculation, and automated PDF analytics reports.",
+        tagline: "Agricultural , Live Stock Control & PDF Accounting",
+        desc: "An enterprise-grade Flutter mobile  and logistics suite designed for Elshaib Poultry & Agricultural Farms. Integrates live inventory control, order fulfillment workflows, egg production monitoring, dynamic discount coupon engine, zone-based delivery calculation, and automated PDF analytics reports.",
         image: "assets/images/elshaib_1.jpg",
         images: [
             "assets/images/elshaib_1.jpg",
             "assets/images/elshaib_2.jpg"
         ],
-        tags: ["Flutter", "Enterprise ERP", "Inventory POS", "PDF Engine", "Analytics BI"],
+        tags: ["Flutter", "Enterprise ", "Inventory POS", "PDF Engine", "Analytics BI"],
         highlights: [
             { icon: "📊", text: "Executive BI Analytics & Automated PDF Financial Reports" },
             { icon: "📦", text: "Multi-Warehouse Inventory & Real-Time Stock Depletion Alerts" },
@@ -260,6 +260,43 @@ const projectsData = [
             "Configurable shipping zones with custom same-day delivery fees"
         ],
         github: "https://github.com/YounanGamal/elshaib"
+    },
+    {
+        id: "livescore-app",
+        number: "08",
+        name: "LiveScore ⚽",
+        badge: "Real-Time Sports & Match Intelligence",
+        category: "Flutter Development",
+        status: "Production Ready",
+        accentColor: "#f97316",
+        accentGlow: "rgba(249, 115, 22, 0.28)",
+        tagline: "Live Match Events, Tactical Pitch Lineups & League Standings",
+        desc: "A high-performance sports intelligence and live score mobile application built with Flutter and BLoC. Delivers sub-second live match events, interactive tactical pitch lineups with 2D player formations, in-depth match stats (xG, ball possession, shots on target), complete European league standings, and personalized favorite team alerts.",
+        image: "assets/images/livescore_2.png",
+        images: [
+            "assets/images/livescore_2.png",
+            "assets/images/livescore_1.png",
+        ],
+        tags: ["Flutter", "Dart", "BLoC State", "REST APIs", "WebSocket", "Tactical Pitch", "Sports BI"],
+        highlights: [
+            { icon: "⚽", text: "Sub-Second Live Match Updates & Referee Event Timelines" },
+            { icon: "📋", text: "Interactive Tactical Pitch Lineups with Starting XI Formations" },
+            { icon: "📊", text: "Deep Match BI: Expected Goals (xG), Possession & Shot Maps" }
+        ],
+        stats: [
+            { label: "Data Latency", val: "< 500ms Live" },
+            { label: "Leagues Tracked", val: "Top 5 European" },
+            { label: "Tactical Engine", val: "Interactive 2D Pitch" }
+        ],
+        features: [
+            "Real-time live match events with dynamic score tickers and card/goal timelines",
+            "Interactive pitch visualizer displaying starting XI formations and bench reserves",
+            "Comprehensive match analytics: ball possession, expected goals (xG), and shots on target",
+            "Live league standings tables for La Liga, Premier League, Champions League, Serie A & Bundesliga",
+            "User profile management with favorite team tracking, match reminders, and security logs",
+            "Smart search across global leagues, teams, upcoming fixtures, and head-to-head match histories"
+        ],
+        github: "https://github.com/YounanGamal"
     }
 ];
 
@@ -445,8 +482,8 @@ function renderProjects() {
                             ${activeProject.images.map((img, i) => `
                                 <button class="stage-thumb-item ${i === 0 ? 'active' : ''}" 
                                         onclick="switchStudioImage('${img}', this); event.stopPropagation();"
-                                        title="View screen ${i+1}">
-                                    <img src="${img}" alt="Screen ${i+1}" />
+                                        title="View screen ${i + 1}">
+                                    <img src="${img}" alt="Screen ${i + 1}" />
                                 </button>
                             `).join('')}
                         </div>
@@ -508,7 +545,7 @@ function startStudioAutoScroll() {
         const filtered = currentFilter === 'all'
             ? projectsData
             : projectsData.filter(p => p.category.toLowerCase().includes(currentFilter.toLowerCase()));
-        
+
         if (filtered.length <= 1) return;
 
         activeStudioIndex = (activeStudioIndex + 1) % filtered.length;
@@ -583,7 +620,7 @@ function nextStudioProject() {
     const filtered = currentFilter === 'all'
         ? projectsData
         : projectsData.filter(p => p.category.toLowerCase().includes(currentFilter.toLowerCase()));
-    
+
     activeStudioIndex = (activeStudioIndex + 1) % filtered.length;
     renderProjects();
     resetStudioAutoScrollTimer();
@@ -594,7 +631,7 @@ function prevStudioProject() {
     const filtered = currentFilter === 'all'
         ? projectsData
         : projectsData.filter(p => p.category.toLowerCase().includes(currentFilter.toLowerCase()));
-    
+
     activeStudioIndex = (activeStudioIndex - 1 + filtered.length) % filtered.length;
     renderProjects();
     resetStudioAutoScrollTimer();
@@ -797,7 +834,7 @@ const phrases = [
     'Tactile & Clean Interfaces ❖',
     'Scalable Clean Architecture 🧱',
     'Fast Responsive Web Apps 💻',
-    'Robust Firebase Cloud Systems 🔥'
+    'Supabase & Firebase Cloud Systems ⚡'
 ];
 
 let phraseIndex = 0;
@@ -1012,7 +1049,8 @@ function initMockupActivity() {
         "Event: StreamListening() • 0 Frame Drops",
         "State: DataLoaded(200 OK) • Latency 22ms",
         "Engine: Clean Architecture • Synced",
-        "Cloud: Firebase Realtime • Live"
+        "Cloud: Supabase Realtime & Postgres • Live",
+        "Sync: Firebase Cloud Firestore • Active"
     ];
 
     let stateIdx = 0;
@@ -1137,7 +1175,7 @@ function updateGallery() {
     }
 }
 
-window.selectThumb = function(idx) {
+window.selectThumb = function (idx) {
     currentImageIndex = idx;
     updateGallery();
 };
@@ -1189,7 +1227,7 @@ function initCarousel() {
     const AUTO_SCROLL_DELAY = 4200; // 4.2 seconds per review card
 
     if (dotsContainer) {
-        dotsContainer.innerHTML = Array.from(cards).map((_, i) => 
+        dotsContainer.innerHTML = Array.from(cards).map((_, i) =>
             `<button class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="goToReview(${i})" aria-label="Go to review ${i + 1}"></button>`
         ).join('');
     }
@@ -1201,7 +1239,7 @@ function initCarousel() {
         dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
     }
 
-    window.goToReview = function(idx, manual = true) {
+    window.goToReview = function (idx, manual = true) {
         if (idx < 0) idx = total - 1;
         if (idx >= total) idx = 0;
         currentIndex = idx;
@@ -1308,8 +1346,10 @@ const commandItems = [
     { title: "Reviews — Client Testimonials", category: "Navigation", icon: "★", action: () => scrollToSection('testimonials') },
     { title: "Contact — Send a Direct Message", category: "Navigation", icon: "✉", action: () => scrollToSection('contact') },
     { title: "Project: Memory Match Challenge 🎮", category: "Projects", icon: "🎮", action: () => openProjectModalById('memory-game') },
-    { title: "Project: Elshaib Farms ERP 🌿", category: "Projects", icon: "🌿", action: () => openProjectModalById('elshaib-farms') },
+    { title: "Project: Elshaib Farms 🌿", category: "Projects", icon: "🌿", action: () => openProjectModalById('elshaib-farms') },
     { title: "Project: Route Academy App 🎓", category: "Projects", icon: "🎓", action: () => openProjectModalById('route-app') },
+    { title: "Project: LiveScore — Football Match Center ⚽", category: "Projects", icon: "⚽", action: () => openProjectModalById('livescore-app') },
+    { title: "Skill: Supabase & PostgreSQL Backend", category: "Skills", icon: "⚡", action: () => scrollToSection('skills') },
     { title: "Download Resume / CV (PDF)", category: "Actions", icon: "📄", action: () => window.open('https://drive.google.com/file/d/1-dyWi4AAjaHsGaMqB3uwvHz4fWDuQHof/view?usp=drive_link', '_blank') },
     { title: "Copy Email Address", category: "Actions", icon: "📋", action: () => copyContact('email', 'younangamal5@gmail.com') },
     { title: "Copy Phone Number", category: "Actions", icon: "📞", action: () => copyContact('phone', '01208106259') },
@@ -1400,8 +1440,8 @@ if (cmdBtn) cmdBtn.addEventListener('click', openCommandPalette);
 if (cmdInput) {
     cmdInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase().trim();
-        filteredCommands = commandItems.filter(item => 
-            item.title.toLowerCase().includes(query) || 
+        filteredCommands = commandItems.filter(item =>
+            item.title.toLowerCase().includes(query) ||
             item.category.toLowerCase().includes(query)
         );
         selectedCmdIndex = 0;

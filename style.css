@@ -1289,6 +1289,14 @@ button {
     animation-delay: 1.6s;
 }
 
+.supabase-badge {
+    top: -18px;
+    left: 65px;
+    border-color: rgba(62, 207, 142, 0.45);
+    box-shadow: 0 12px 28px rgba(62, 207, 142, 0.22);
+    animation-delay: 2.1s;
+}
+
 .scroll-indicator {
     position: absolute;
     bottom: 20px;

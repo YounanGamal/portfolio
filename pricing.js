@@ -24,10 +24,10 @@ const pricingData = [
         tier: "Full MVP App",
         price: "60",
         period: "per milestone",
-        desc: "Full multi-screen cross-platform application with state management, Firebase backend, and offline caching.",
+        desc: "Full multi-screen cross-platform application with state management, Supabase / Firebase backend, and offline caching.",
         features: [
             "Complete multi-screen application",
-            "REST API & Firebase Cloud sync",
+            "REST API, Supabase & Firebase sync",
             "BLoC / Cubit Clean Architecture",
             "Biometric auth & secure storage",
             "3 revision rounds included",
